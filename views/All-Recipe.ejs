@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" class="allpag">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All-Recipe</title>
+
+    <link rel="stylesheet" href="script.js"/>
+    <link rel="stylesheet" href="styles.css"/>
+    <script defer src="script.js"></script>
+</head>
+<body id="body-page">
+
+    <%- include('./partials/header'); %>
+    
+
+
+<main id="main">
+  <section>
+      <h1>Add Your Recipe &#128293;</h1>
+      <a class="Go" href="/AddNewRecipe">Add New Recipe</a>
+
+      <div class="parent-of-articles">
+
+
+        <!-- item =all elements inside array -->
+
+        <%   arrArticle.forEach(item   => {  %>
+            
+            <article class="article-All-Recipe">
+                <h2> <%=   item.title  %> </h2>
+                <p>
+                    <%= item.summary %>
+                    <a class="btn" href="/All-Recipe/<%= item._id %>">show more</a>
+                </p>
+            </article>
+         <%  }); %> 
+
+      
+      </div>
+
+  </section>
+
+</main>
+
+<!-- footer -->
+<%- include(`./partials/footer`); %> 
+
+</body>
+</html>

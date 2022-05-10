@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" class="allpag">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RecipeDetails</title>
+    <link rel="stylesheet" href="/script.js"/>
+    <link rel="stylesheet" href="/styles.css"/>
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <!-- header -->
+    <%- include('./partials/header'); %>
+
+   
+
+    <div class="RecipeDetails">
+
+       <h1 class="RecipeTitle"> <%= objArticle.title %></h1>
+
+        <h3 class="RecipeTitle"> <%= objArticle.summary %></h3>
+      </div>
+          <p class="recipe-par"><%= objArticle.body %></p>
+         
+
+
+    <div id="footerDetails">
+      <!-- footer -->
+      <%- include(`./partials/footer`); %>
+    </div>
+  </body>
+</html>

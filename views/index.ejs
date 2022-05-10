@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en" class="allpag">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home</title>
+
+  <link rel="stylesheet" href="script.js" />
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("#shaw-button").click(function () {
+        $("#shaw-All").toggle();
+      });
+    });
+  </script>
+
+</head>
+
+<body id="body-page">
+
+  <!-- header -->
+
+  <%- include('./partials/header'); %>
+
+    <form id="form-timer">
+
+    </form>
+    <section>
+      <h1 class="h1"><strong>latest Recipe</strong></h1>
+      <h2 class="topic"><strong>Cook it with potatoes</strong></h2>
+
+
+      <figure>
+        <img width="400" class="my-img" src="images/9.jpg" />
+      </figure>
+
+      <div class="summary1">
+        <summary>
+          <h3 id="line60"><strong>Barley Soup</strong></h3>
+        </summary>
+        <p>Our Vegetable Barley Soup recipe makes a homey starter to go with weekend dinner.<br> With a variety of
+          vegetables,
+          herbs and a pesto finish, you'll have flavour and freshness in a bowl!
+        </p>
+      </div>
+
+      <ol>
+        <li>In a large saucepan, heat oil over medium high heat. Cook onions, carrots and celery just until tender.
+          Add
+          garlic and cook one minute more.</li>
+        <li>Stir in broth, parsley, thyme, bay leaves, barley, tomatoes, and potatoes. Bring to a boil, reduce
+          heat to maintain a simmer, cover and cook until barley and potatoes are tender, about 15 – 20 minutes.</li>
+        <li>Add zucchini and green beans and cook 5 minutes more.</li>
+        <li>Serve in bowls with a spoonful of pesto, a drizzle of olive oil and grated Parmesan.</li>
+        <li>It is best eaten cold</li>
+
+        <ol>
+
+          <br />
+
+          <figure>
+            <img width="300" src="images/8.jpg" />
+            <figcaption></figcaption>
+          </figure>
+
+          <details>
+            <summary>
+              </h3><strong> Hearty Bolognese Soup </strong></h3>
+            </summary>
+            <ul>
+              <li>Heat oil in large saucepan over medium to high heat. Cook ground beef, breaking up with spoon, 6
+                minutes
+                or until no longer pink; drain off fat. Reduce heat to medium.</li>
+              <li>
+                Add onions, carrots, garlic, Italian herb seasoning and pepper, optional; cook, stirring 5 minutes
+                until
+                tender.
+              </li>
+              <li>Stir in broth, soup, water, vinegar and pasta. Cook, stirring occasionally, until boiling. Simmer,
+                covered, stirring occasionally over medium to low heat for 6 minutes until pasta is tender.</li>
+
+            </ul>
+          </details>
+    </section>
+    <br />
+    <hr />
+    <section>
+      <h3><strong>Customer Reviews</strong></h3>
+    </section>
+
+
+    <section>
+      <h3>Create New Reviews</h3>
+
+      <form action="/index.html" method="POST">
+
+        <label for="name">Customer Name</label>
+        <input name="name" class="nameCustomer" type="name" placeholder="Name" required />
+
+        <label for="comment">Comment</label>
+        <textarea id="textareaReviews" name="comment" placeholder="Your Comment" required></textarea>
+
+        <button class="create">Create</button>
+
+      </form>
+    </section>
+    <button id="shaw-button" class="create">All</button>
+
+
+
+    <!-- item = all elements inside array -->
+
+
+    <div id="shaw-All">
+      <div class="allReviews">
+        <% arrReviews.forEach(item=> { %>
+
+          <article class="article-All-Reviews">
+            <h3><u>
+                <%= item.name %>
+              </u></h3>
+            <p>
+              <%= item.comment %>
+            </p>
+          </article>
+          <% }) %>
+      </div>
+    </div>
+
+    <div class="container-Donation" style="width: 18rem;">
+      <img style="border-radius: 50px;" width="200px" src="images/Donation.jpg" class="card-img-top" alt="...">
+      <div>
+        <h3>SUPPORT US</h3>
+        <p>Support the channel to continue.</p>
+        <a class="Donation-buy" href="#" class="Go">Donation</a>
+
+      </div>
+    </div>
+
+    <div class="container-card">
+      <div class="Payment">
+        <h2>Payment</h2>
+      
+      <form id="allform" class="allform">
+        <div class="form-control">
+          <label for="username"></label>
+          <input type="text"  class="Payment" id="username" placeholder="Name"/>
+          <i class="fas fa-check-circle"></i>
+          <i class="fas fa-exclamation-circle"></i>
+          <small>Error message</small>
+        </div>
+
+        <div class="form-control">
+          <label for="username"></label>
+          <input type="text" class="Payment" id="cardNumber" placeholder="Card Number"/>
+          <i class="fas fa-check-circle"></i>
+          <i class="fas fa-exclamation-circle"></i>
+          <small>Error message</small>
+        </div>
+
+        <div class="form-control">
+          <label for="username"></label>
+          <input type="text" class="Payment" id="CardDate" placeholder=" Card Date / Month-Year" />
+          <i class="fas fa-check-circle"></i>
+          <i class="fas fa-exclamation-circle"></i>
+          <small>Error message</small>
+        </div>
+
+        <div class="form-control">
+          <label for="username"></label>
+          <input type="text" class="Payment" id="cvv" placeholder="CVV"/>
+          <i class="fas fa-check-circle"></i>
+          <i class="fas fa-exclamation-circle"></i>
+          <small>Error message</small>
+        </div>
+
+        <div class="form-control">
+          <label for="username"></label>
+          <input type="text" class="Payment" id="amount" placeholder="Amount" />
+          <i class="fas fa-check-circle"></i>
+          <i class="fas fa-exclamation-circle"></i>
+          <small>Error message</small>
+        </div>
+
+        <div class="form-control">
+          <label for="username"></label>
+          <input type="email" placeholder="a@florin-pop.com" class="Payment" id="email" />
+          <i class="fas fa-check-circle"></i>
+          <i class="fas fa-exclamation-circle"></i>
+          <small>Error message</small>
+        </div>
+        <button class="checkout" id="Submit">Continue to checkout</button>
+        
+        <br />
+        <a class="Back" href="index.html">Back</a>
+
+      </form>
+    </div>
+  </div>
+
+ <script>
+const allform = document.getElementById('allform');
+const username = document.getElementById('username');
+const cardNumber = document.getElementById('cardNumber');
+const CardDate = document.getElementById('CardDate');
+const cvv = document.getElementById('cvv');
+const amount = document.getElementById('amount');
+const email = document.getElementById('email');
+
+
+allform.addEventListener('submit', e => {
+	e.preventDefault();
+	
+	checkInputs();
+});
+
+function checkInputs() {
+	const usernameValue = username.value.trim();
+  const cardNumberValue = cardNumber.value.trim();
+	const CardDateValue = CardDate.value.trim();
+	const cvvValue = cvv.value.trim();
+	const amountValue = amount.value.trim();
+	const emailValue = email.value.trim();
+
+	
+	if(usernameValue === '') {
+		setErrorFor(username, 'Username');
+	} else {
+		setSuccessFor(username);
+	}
+
+  if(cardNumberValue === '') {
+		setErrorFor(cardNumber, 'CardNumber');
+	} else {
+		setSuccessFor(cardNumber);
+	}
+	
+  if(CardDateValue === '') {
+		setErrorFor(CardDate, 'Card Date');
+	} else {
+		setSuccessFor(CardDate);
+	}
+
+  if(cvvValue === '') {
+		setErrorFor(cvv, 'CVV');
+	} else {
+		setSuccessFor(cvv);
+	}
+
+  if(amountValue === '') {
+		setErrorFor(amount, 'amount');
+	} else {
+		setSuccessFor(amount);
+	}
+	
+	if(emailValue === '') {
+		setErrorFor(email, 'Email');
+	} else if (!isEmail(emailValue)) {
+		setErrorFor(email, 'Not a valid email');
+	} else {
+		setSuccessFor(email);
+	}
+	
+}
+
+function setErrorFor(input, message) {
+	const formControl = input.parentElement;
+	const small = formControl.querySelector('small');
+	formControl.className = 'form-control error';
+	small.innerText = message;
+}
+
+function setSuccessFor(input) {
+	const formControl = input.parentElement;
+	formControl.className = 'form-control success';
+}
+	
+function isEmail(email) {
+	return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+}
+
+</script>
+    <form id="buyDone">
+      <h4>Done<br />Thanks</h4>
+    </form>
+</body>
+
+
+
+<!-- footer -->
+<%- include(`./partials/footer`); %>
+
+
+</html>

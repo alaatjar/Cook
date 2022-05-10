@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" class="allpag">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=
+    , initial-scale=1.0"
+    />
+    <title>Contact Us</title>
+
+    <link rel="stylesheet" href="script.js" />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <%- include('./partials/header'); %>
+
+    <div class = "form-container">
+    <form class="contact-us">
+      <h2>CONTACT US</h2>
+      <!-- <label for="Name">Your Name</label> -->
+      <input id="name-con" type="text" placeholder="Full name" />
+      <br />
+      <!-- <label for="email">Your Email</label> -->
+      <input id="email-con" type="Email"placeholder="Your Email" />
+      <br />
+      <input id="subject-con" type="subject"placeholder="Subject" />
+      <br />
+      <label for="message">Your Message</label>
+      <br />
+
+      <textarea id="message-con"
+       rows="10"cols="50"maxlength="500"placeholder="Enter Your Message"spellcheck="true">
+      </textarea>
+
+      <h6>Maximum 500 Character</h6>
+      <input type="submit" id="send-massage" value="send" />
+    </form>
+  </div>
+
+    <footer>
+  <!-- footer -->
+  <%- include(`./partials/footer`); %> 
+    </footer>
+  </body>
+</html>

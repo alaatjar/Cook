@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en" class="allpag">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Achievements</title>
+  <link rel="stylesheet" href="script.js" />
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+</head>
+
+<body id="body-page">
+  <%- include('./partials/header'); %>
+
+    <table class="table-achievements">
+      <caption id="achievements-page">
+        Our achievements
+      </caption>
+      <tr>
+        <td>Chicken</td>
+        <td>Beef</td>
+      </tr>
+      <tr>
+        <td>
+          Chicken Orzo
+          <br />
+          <a target="_blank" href="https://www.cookwithcampbells.ca/recipe/chicken-orzo/">
+            <img width="250px" src="images/6.jpg" /></a>
+        </td>
+        <td>
+          Beef Sandwich Cheesy Roasted
+          <br />
+          <a target="_blank"
+            href="https://www.cookwithcampbells.ca/recipe/cheesy-roasted-red-pepper-and-beef-sandwich/">
+            <img width="250px" src="images/5.jpg" /></a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Easy Chicken & Mushroom Risotto
+          <br />
+          <a target="_blank" href="https://www.cookwithcampbells.ca/recipe/chicken-mushroom-risotto/">
+            <img width="250px" src="images/7.jpg" /></a>
+        </td>
+        <td>
+          Slow Cooker Beef Stew
+          <a target="_blank" href="https://www.cookwithcampbells.ca/recipe/slow-cooker-beef-stew/">
+            <img width="250px" src="images/4.jpg" /></a>
+        </td>
+      </tr>
+    </table>
+
+    <video controls src="images//Slow Cooker Beef Stew - Easy Peasy Great Dinner!.mp4"></video>
+    <br />
+
+    <h2 id="Special">Special Recipes (For Sale)</h2>
+    <section class="container-buy">
+      <div style="width: 15rem">
+        <img style="border-radius: 50px" width="200px" src="images/Diabetics.png" class="card-img-top" alt="..." />
+        <div>
+          <h3 class="title-buy">Diabetics</h3>
+          <p class="title-buy">To buy the recipe<br />click here</p>
+          <a class="Donation-buy" href="#" class="Go">buy $20</a>
+        </div>
+      </div>
+
+      <div style="width: 15rem">
+        <img style="border-radius: 50px" width="200px" src="images/keto.png" class="card-img-top" alt="..." />
+        <div>
+          <h3 class="title-buy">Keto Diet</h3>
+          <p class="title-buy">To buy the recipe<br />click here</p>
+          <a class="Donation-buy" href="#" class="Go">buy $15</a>
+
+          <br />
+          <nav>
+            <h4><a class="help" href="./contactUs.html">Help</a></h4>
+          </nav>
+        </div>
+      </div>
+    </section>
+
+    <div class="share">
+      <h3 class="share">You can share your recipes on the site.</h3>
+
+      <a class="share-Go" href="AddRecipe.html">Add Recipe</a>
+    </div>
+
+
+    <div class="container-card">
+      <div class="Payment">
+        <h2>Payment</h2>
+      
+      <form id="allform" class="allform">
+        <div class="form-control">
+          <label for="username"></label>
+          <input type="text"  class="Payment" id="username" placeholder="Name"/>
+          <i class="fas fa-check-circle"></i>
+          <i class="fas fa-exclamation-circle"></i>
+          <small>Error message</small>
+        </div>
+
+        <div class="form-control">
+          <label for="username"></label>
+          <input type="text" class="Payment" id="cardNumber" placeholder="Card Number"/>
+          <i class="fas fa-check-circle"></i>
+          <i class="fas fa-exclamation-circle"></i>
+          <small>Error message</small>
+        </div>
+
+        <div class="form-control">
+          <label for="username"></label>
+          <input type="text" class="Payment" id="CardDate" placeholder=" Card Date / Month-Year" />
+          <i class="fas fa-check-circle"></i>
+          <i class="fas fa-exclamation-circle"></i>
+          <small>Error message</small>
+        </div>
+
+        <div class="form-control">
+          <label for="username"></label>
+          <input type="text" class="Payment" id="cvv" placeholder="CVV"/>
+          <i class="fas fa-check-circle"></i>
+          <i class="fas fa-exclamation-circle"></i>
+          <small>Error message</small>
+        </div>
+
+        <div class="form-control">
+          <label for="username"></label>
+          <input type="text" class="Payment" id="amount" placeholder="Amount" />
+          <i class="fas fa-check-circle"></i>
+          <i class="fas fa-exclamation-circle"></i>
+          <small>Error message</small>
+        </div>
+
+        <div class="form-control">
+          <label for="username"></label>
+          <input type="email" placeholder="a@florin-pop.com" class="Payment" id="email" />
+          <i class="fas fa-check-circle"></i>
+          <i class="fas fa-exclamation-circle"></i>
+          <small>Error message</small>
+        </div>
+        <button class="checkout" id="Submit">Continue to checkout</button>
+        
+        <br />
+        <a class="Back" href="OurAchievements.html">Back</a>
+
+      </form>
+    </div>
+  </div>
+
+ <script>
+const allform = document.getElementById('allform');
+const username = document.getElementById('username');
+const cardNumber = document.getElementById('cardNumber');
+const CardDate = document.getElementById('CardDate');
+const cvv = document.getElementById('cvv');
+const amount = document.getElementById('amount');
+const email = document.getElementById('email');
+
+
+allform.addEventListener('submit', e => {
+	e.preventDefault();
+	
+	checkInputs();
+});
+
+function checkInputs() {
+	const usernameValue = username.value.trim();
+  const cardNumberValue = cardNumber.value.trim();
+	const CardDateValue = CardDate.value.trim();
+	const cvvValue = cvv.value.trim();
+	const amountValue = amount.value.trim();
+	const emailValue = email.value.trim();
+
+	
+	if(usernameValue === '') {
+		setErrorFor(username, 'Username');
+	} else {
+		setSuccessFor(username);
+	}
+
+  if(cardNumberValue === '') {
+		setErrorFor(cardNumber, 'CardNumber');
+	} else {
+		setSuccessFor(cardNumber);
+	}
+	
+  if(CardDateValue === '') {
+		setErrorFor(CardDate, 'Card Date');
+	} else {
+		setSuccessFor(CardDate);
+	}
+
+  if(cvvValue === '') {
+		setErrorFor(cvv, 'CVV');
+	} else {
+		setSuccessFor(cvv);
+	}
+
+  if(amountValue === '') {
+		setErrorFor(amount, 'amount');
+	} else {
+		setSuccessFor(amount);
+	}
+	
+	if(emailValue === '') {
+		setErrorFor(email, 'Email');
+	} else if (!isEmail(emailValue)) {
+		setErrorFor(email, 'Not a valid email');
+	} else {
+		setSuccessFor(email);
+	}
+	
+}
+
+function setErrorFor(input, message) {
+	const formControl = input.parentElement;
+	const small = formControl.querySelector('small');
+	formControl.className = 'form-control error';
+	small.innerText = message;
+}
+
+function setSuccessFor(input) {
+	const formControl = input.parentElement;
+	formControl.className = 'form-control success';
+}
+	
+function isEmail(email) {
+	return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+}
+
+</script>
+
+
+    <form id="buyDone">
+      <h4>Done<br />Thanks</h4>
+    </form>
+
+
+    
+</body>
+
+<!-- footer -->
+<%- include(`./partials/footer`); %>
+
+</html>

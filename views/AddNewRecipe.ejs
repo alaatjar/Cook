@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" class="allpag">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Add New Recipe</title>
+  <link rel="stylesheet" href="script.js" />
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+</head>
+
+<body id="body-page">
+  <%- include('./partials/header'); %>
+</body>
+
+<main id="main">
+  <section>
+    <h1>Create New Recipe</h1>
+
+    <form class="CreateRecipe" action="/All-Recipe" method="POST">
+      <label for="title" class="label-Recipe">Recipe Title</label>
+      <input id="title" name="title" class="input-Recipe" type="text" />
+
+      <label for="summary" class="label-Recipe">Recipe Summary</label>
+      <input id="summary" name="summary" class="input-Recipe" type="text" />
+
+      <label for="body" class="label-Recipe">How to prepare </label>
+      <textarea id="textِareaBody" name="body"></textarea>
+
+      <button class="create">Create</button>
+      <a target="_blank" class="create" href="All-Recipe">All-Recipe</a>
+    </form>
+  </section>
+</main>
+
+<!-- footer -->
+<%- include(`./partials/footer`); %>
+
+</html>
